@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>neoprojectdemo</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>WebHookServlet</servlet-name>
+		<servlet-class>com.neoprojectdemo.WebHookServlet</servlet-class>
+	</servlet>
+<!-- 	<servlet>
+		<servlet-name>IppServlet</servlet-name>
+		<servlet-class>com.neoprojectdemo.IppServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>IppServlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>  --><!-- <servlet> --><!-- <servlet-name>BackendSystemServlet</servlet-name> --><!-- <servlet-class>com.neoprojectdemo.BackendSystemServlet</servlet-class> --><!-- </servlet> --><!-- <servlet-mapping> --><!-- <servlet-name>BackendSystemServlet</servlet-name> --><!-- <url-pattern>/backend</url-pattern> --><!-- </servlet-mapping> -->  <!-- <servlet> --><!-- <servlet-name>Hello</servlet-name> --><!-- <servlet-class>com.neoprojectdemo.Hello</servlet-class> --><!-- </servlet> --><!-- <servlet-mapping> --><!-- <servlet-name>Hello</servlet-name> --><!-- <url-pattern>/*</url-pattern> --><!-- </servlet-mapping> -->
+	<servlet-mapping>
+		<servlet-name>WebHookServlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	<resource-ref>
+		<res-ref-name>connectivityConfiguration</res-ref-name>
+		<res-type>com.sap.core.connectivity.api.configuration.ConnectivityConfiguration</res-type>
+	</resource-ref>
+	<resource-ref>
+		<res-ref-name>de.lohndirekt.print.IppPrintService</res-ref-name>
+		<res-type>jipsi</res-type>
+	</resource-ref>
+	<resource-ref>
+		<res-ref-name>EcmService</res-ref-name>
+		<res-type>com.sap.ecm.api.EcmService</res-type>
+	</resource-ref> <!-- <security-constraint> --><!-- <web-resource-collection> --><!-- <web-resource-name>Protect Web Hook Resources</web-resource-name> --><!-- <url-pattern>/*</url-pattern> --><!-- </web-resource-collection> --><!-- <auth-constraint> --><!-- <role-name>Everyone</role-name> --><!-- </auth-constraint> --><!-- </security-constraint> --><!-- <security-role> --><!-- <description>All SAP Cloud Platform users</description> --><!-- <role-name>Everyone</role-name> --><!-- </security-role> -->
+</web-app>
